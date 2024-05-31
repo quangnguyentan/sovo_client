@@ -66,7 +66,7 @@ function CustomGrid({ size, flexDirectionStyle, headerBox }) {
         CÁC TRẬN HOT
       </Box>
        {size > 3 ?  
-       <Box sx={{flexDirection : {  md :  flexDirectionStyle ? 'column' : '' },  display : { xs : 'none', md : 'flex', flexDirection : 'column'} }}>
+       <Box sx={{flexDirection : {  md :  flexDirectionStyle ? 'column' : '' },  display : { xs : 'none', md : 'flex', flexDirection : 'column', } }}>
           <Grid sx={{ position : 'relative' }} container rowSpacing={3} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
             <Grid item xs={size} >
             {matches && matches?.slice(0, 3)?.map((el) => (
@@ -78,18 +78,23 @@ function CustomGrid({ size, flexDirectionStyle, headerBox }) {
                   transform : 'translateY(-3px)',
                   transitionDuration : '5s'
                 } }}>
-                  <Box sx={{  color : 'white',  display : 'flex', alignItems : 'center', justifyContent : 'space-between', px : 2, borderTopRightRadius : '10px', borderTopLeftRadius : '10px', p : 1 , background : 'linear-gradient(50deg, #ff6427, #770000)' }}>
-                  <Typography sx={{ fontSize : '15px', fontWeight : 600, color : 'white' }} >
+                  <Box sx={{   
+                      color : 'white',  display : 'flex', alignItems : 'center', justifyContent : 'space-between', px : 2, borderTopRightRadius : '10px', borderTopLeftRadius : '10px', p : 1 , background : 'linear-gradient(50deg, #ff6427, #770000)' }}>
+                  <Typography sx={{ fontSize : 'px', fontWeight : 600, color : 'white',  }} >
                       {el?.tournament_name}
                   </Typography>
-                  <Typography sx={{ fontSize : '15px', fontWeight : 600 }} >
+                  <Typography sx={{ fontSize : '13px', fontWeight : 600,  overflow: 'hidden',
+                      textOverflow: 'ellipsis',
+                      display: '-webkit-box',
+                      WebkitLineClamp: '1',
+                      WebkitBoxOrient: 'vertical', }} >
                    {result?.name}
                   </Typography>
                   </Box>
                   
-                 <Box width='100%' height='100%' style={styles.heroContainer} sx={{ bgcolor : '#232324', borderBottomLeftRadius : '10px', borderBottomRightRadius : '10px' }} >
+                 <Box width='100%' height='100%' style={styles.heroContainer} sx={{   bgcolor : '#232324', borderBottomLeftRadius : '10px', borderBottomRightRadius : '10px' }} >
                   <Divider  sx={{  border : '1', borderColor : 'white' }}/>
-                  <Box sx={{ color : 'white',  display : 'flex', alignItems : 'center', justifyContent : 'space-between', px : 2 }}>
+                  <Box sx={{ color : 'white',  display : 'flex', alignItems : 'center', justifyContent : 'space-between', px : 2, py: 0.5 }}>
                   <Box sx={{ flexDirection : 'column' }}>
                   <img width='20px' height='20px' src={el?.host_club_logo_url} alt="" />
                   <Typography sx={{ fontSize : '14px' }}>
@@ -118,7 +123,7 @@ function CustomGrid({ size, flexDirectionStyle, headerBox }) {
                   <Typography sx={{ fontSize : '15px', fontWeight : 600 }}>
                     Chưa diễn ra 
                   </Typography>
-                  <Link to={linkSetBit}>
+                  <Link to={linkSetBit} style={{ textDecoration : 'none' }} >
                     <Chip label='Đặt Cược' className='button_info' sx={{ borderRadius : '10px', fontWeight : 600, width : '90px', height: '30px', fontSize : '10px' }} />
                   </Link>
                   </Box>
@@ -144,26 +149,46 @@ function CustomGrid({ size, flexDirectionStyle, headerBox }) {
                   transform : 'translateY(-3px)',
                   transitionDuration : '5s'
                 } }}>
-                  <Box sx={{  color : 'white',  display : 'flex', alignItems : 'center', justifyContent : 'space-between', px : 2, borderTopRightRadius : '10px', borderTopLeftRadius : '10px', p : 1 , background : 'linear-gradient(50deg, #ff6427, #770000)' }}>
-                  <Typography sx={{ fontSize : '15px', fontWeight : 600, color : 'white' }} >
+                  <Box sx={{ overflow: 'hidden',
+                      textOverflow: 'ellipsis',
+                      display: '-webkit-box',
+                      WebkitLineClamp: '1',
+                      WebkitBoxOrient: 'vertical', color : 'white',  display : 'flex', alignItems : 'center', justifyContent : 'space-between', px : 2, borderTopRightRadius : '10px', borderTopLeftRadius : '10px', p : 1 , background : 'linear-gradient(50deg, #ff6427, #770000)' }}>
+                  <Typography sx={{ fontSize : '13px', fontWeight : 600, color : 'white',overflow: 'hidden',
+                      textOverflow: 'ellipsis',
+                      display: '-webkit-box',
+                      WebkitLineClamp: '1',
+                      WebkitBoxOrient: 'vertical', }} >
                       {el?.tournament_name}
                   </Typography>
-                  <Typography sx={{ fontSize : '15px', fontWeight : 600 }} >
+                  <Typography sx={{ fontSize : '15px', fontWeight : 600,overflow: 'hidden',
+                      textOverflow: 'ellipsis',
+                      display: '-webkit-box',
+                      WebkitLineClamp: '1',
+                      WebkitBoxOrient: 'vertical', }} >
                    {result?.name}
                   </Typography>
                   </Box>
                   
                  <Box width='100%' height='100%' style={styles.heroContainer} sx={{ bgcolor : '#232324', borderBottomLeftRadius : '10px', borderBottomRightRadius : '10px' }} >
                   <Divider  sx={{  border : '1', borderColor : 'white' }}/>
-                  <Box sx={{ color : 'white',  display : 'flex', alignItems : 'center', justifyContent : 'space-between', px : 2 }}>
+                  <Box sx={{ color : 'white',  display : 'flex', alignItems : 'center', justifyContent : 'space-between', px: 2, py : 1 }}>
                   <Box sx={{ flexDirection : 'column' }}>
-                  <img width='20px' height='20px' src={el?.host_club_logo_url} alt="" />
-                  <Typography sx={{ fontSize : '14px' }}>
+                  <img width='18px' height='18px'  style={{ objectFit : 'cover' }}  src={el?.host_club_logo_url} alt="" />
+                  <Typography sx={{ fontSize : '14px' ,overflow: 'hidden',
+                      textOverflow: 'ellipsis',
+                      display: '-webkit-box',
+                      WebkitLineClamp: '1',
+                      WebkitBoxOrient: 'vertical', }}>
                     {el?.host_club_name}
                   </Typography>
                 </Box>
                 
-                  <Box sx={{ flexDirection : 'column' }}>
+                  <Box sx={{ flexDirection : 'column',overflow: 'hidden',
+                      textOverflow: 'ellipsis',
+                      display: '-webkit-box',
+                      WebkitLineClamp: '1',
+                      WebkitBoxOrient: 'vertical', }}>
                     <Typography sx={{ fontSize : '15px', fontWeight : 600 }} >
                       {el?.start_time?.slice(0, -3)} - {convertDate(el?.start_date)}
                     </Typography>
@@ -171,9 +196,13 @@ function CustomGrid({ size, flexDirectionStyle, headerBox }) {
                       vs
                     </Typography>
                   </Box>
-                <Box sx={{ flexDirection : 'column' }}>
-                  <img width='20px' height='20px' src={el?.guest_club_logo_url} alt="" />
-                  <Typography sx={{ fontSize : '14px' }}>
+                <Box sx={{ flexDirection : 'column', height : '50px' }}>
+                  <img width='18px' height='18px' style={{ objectFit : 'cover' }} src={el?.guest_club_logo_url} alt="" />
+                  <Typography sx={{ fontSize : '14px',overflow: 'hidden',
+                      textOverflow: 'ellipsis',
+                      display: '-webkit-box',
+                      WebkitLineClamp: '1',
+                      WebkitBoxOrient: 'vertical', }}>
                     {el?.guest_club_name}
                   </Typography>
                 
@@ -184,7 +213,7 @@ function CustomGrid({ size, flexDirectionStyle, headerBox }) {
                   <Typography sx={{ fontSize : '15px', fontWeight : 600 }}>
                     Chưa diễn ra 
                   </Typography>
-                  <Link to={linkSetBit}>
+                  <Link to={linkSetBit} style={{ textDecoration : 'none' }}>
                     <Chip label='Đặt Cược' className='button_info' sx={{ borderRadius : '10px', fontWeight : 600, width : '90px', height: '30px', fontSize : '10px' }} />
                   </Link>
                   </Box>

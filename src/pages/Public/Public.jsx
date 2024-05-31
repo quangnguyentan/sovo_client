@@ -35,11 +35,11 @@ function Public() {
     </Box>
     <Banner data={ads} />
 
-   <Box sx={{ display : 'flex' }}>
+   <Box sx={{ display : 'flex', m : 0 }}>
     <Box sx={{ display : { md : 'inline-block', sm : 'none', xs : 'none'} }}>
       <img src={BannerLeft} alt=""style={{ position : 'fixed', left : '5%'}}/>
     </Box>
-    <Outlet data={ads} />
+    <Outlet/>
     <Box sx={{ display : { md : 'flex', sm : 'none', xs : 'none'} }}>
       <img src={BannerRight} alt=""  style={{ position : 'fixed', right : '5%'}}/> 
     </Box>

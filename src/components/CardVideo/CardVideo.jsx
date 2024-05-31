@@ -157,12 +157,12 @@ function CardVideo({ ChatBox, titleContent,blv }) {
       <Box sx={{ display : { md : 'flex' }, gap : 2 }}>
       
         <Box sx={{ width : {md : '70%', xs : '100%'}, height : '100%'}} >
-       <Box sx={{ position : 'absolute ', display : 'flex', width : {md : '43%', xs : '100%'}, justifyContent : 'space-between'}}> 
+       <Box sx={{ position : 'absolute ', display : 'flex', width : {md : '43%', xs : '95%'}, justifyContent : 'space-between'}}> 
        
        {/* {changeSource !== sources.bunnyTrailer && <Button variant="contained" style={{ position : 'absolute', zIndex : 1, 
         color : 'white', fontSize : '10px', textTransform : 'capitalize', cursor : 'default',
         right : { md : '68%'}, width : 'fit-cotent', margin : '10px',  height: '30px', backgroundColor : 'black' }}>Video sẽ tự động bỏ qua sau {timeNext}</Button>} */}
-        {changeSource !== sources.bunnyTrailer ? time === 0 || time === undefined ? <Button endIcon={<SkipNextIcon/>} onClick={() => setChangeSource(sources.bunnyTrailer)} variant="contained" style={{ position : 'absolute', zIndex : 1, 
+        {ads && changeSource !== sources.bunnyTrailer ? time === 0 || time === undefined ? <Button endIcon={<SkipNextIcon/>} onClick={() => setChangeSource(sources.bunnyTrailer)} variant="contained" style={{ position : 'absolute', zIndex : 1, 
         color : 'white', fontSize : '10px', textTransform : 'capitalize', cursor : 'pointer', right : 20, width : 'fit-content', margin : '10px',  height: '30px', backgroundColor : 'black' }}>Bỏ qua </Button> : <Button endIcon={<SkipNextIcon/>} variant="contained" style={{ position : 'absolute', zIndex : 1, 
         color : 'white', fontSize : '10px', textTransform : 'capitalize', cursor : 'default', right : 20, width : 'fit-content', margin : '10px',  height: '30px', backgroundColor : 'black' }}>Có thể bỏ qua {time}</Button> : ''}</Box>
         <Box sx={{ width : '100%', height : '100%' }}>
@@ -192,7 +192,7 @@ function CardVideo({ ChatBox, titleContent,blv }) {
         }/> */}
         
          <img className='react-player1' src={BannerVideoFooter} style={{width : '100%',objectFit : 'contain'}} alt="" /> 
-        {!blv && <>
+        {!blv && ads && <>
           <Box sx={{ display : 'flex ', justifyContent : 'space-between' }}>
        <Button variant='contained' lassName='button_info' endIcon={<KeyboardVoiceIcon/> } startIcon={<SkipNextIcon/>} sx={{ 
             

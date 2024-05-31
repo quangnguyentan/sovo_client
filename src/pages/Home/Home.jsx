@@ -42,12 +42,12 @@ function Home() {
         <CardVideo titleContent blv/>
         </Box>
         <Box sx={{ width : '100%',bgcolor : '#000000', px : 4, borderRadius : '15px ' }}>
-          <Box sx={{ py : 2,justifyContent : 'center'}}>
+          <Box sx={{ py : 2,justifyContent : 'center'}} className='tran_hot_banner'>
             <img src={TranHotBanner} alt="" style={{  display : { md : 'flex', xs : 'none' }, objectFit : 'contain' }}   />
           </Box>
           <CustomGrid size={2} />
           <Box sx={{ py : 2,justifyContent : 'center', display : 'flex'}}>
-            <img src={btnMore}  alt="" style={{  display : { md : 'flex', xs : 'none' }, objectFit : 'contain' }} />
+            <img src={btnMore}  alt="" style={{  display : { md : 'flex', xs : 'none' }, objectFit : 'contain' }} className='show_more_banner'/>
           </Box>
         </Box>
         <Box sx={{ width : '100%', py :  { md :  1, xs : 0}, display : { md : 'flex' , xs  : 'flex'}, flexDirection : { xs : 'column', md : 'row'} }}>
